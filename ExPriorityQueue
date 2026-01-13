@@ -1,0 +1,29 @@
+package edu;
+
+import java.util.PriorityQueue;
+
+public class ExPriorityQueue {
+
+	public static void main(String[] args) {
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+		
+		pq.add(40);
+		pq.add(100);
+		pq.add(70);
+		pq.add(90);
+		pq.add(50);
+		
+		System.out.println("Elements in the priority queue: " + pq);
+		
+		int priority = 0;
+		
+		while(!pq.isEmpty()) {
+			priority++;
+			System.out.println("Element Served: " + pq.poll() + " with priority as " + priority);
+		}
+		
+		System.out.println("Elemnts in the priority queue: " + pq);
+
+	}
+
+}
