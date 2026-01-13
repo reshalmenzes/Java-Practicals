@@ -1,0 +1,110 @@
+package edu;
+
+public class SimpleDequeArray {
+	
+	int size;
+	int deque[];
+	int front;
+	int rear;
+	
+	public SimpleDequeArray(int length) {
+		deque = new int[length];
+		front = 0;
+		rear = -1;
+		size = length;
+	}
+	
+	public boolean isEmpty() {
+		return (front > rear);
+	}
+	
+	public boolean isFull() {
+		return (size == rear - 1);
+	}
+	
+	public void insertAtRear (int value) {
+		if(isFull()) {
+			System.out.println("Queue is already full");
+			return;
+		}
+		rear++;
+		deque[rear] = value;
+		System.out.println("Value inserted at rear: " + value);
+	}
+	
+	public void insertAtFront (int value) {
+		if(front == 0) {
+			System.out.println("No space cannot insert!");
+			return;
+		}
+		front--;
+		deque[front] = value;
+		System.out.println("Value inserted at front: " + value);
+	}
+	
+	public void deletedFromFront() {
+		if(isEmpty()) {
+			System.out.println("Queue is already empty");
+			return;
+		}
+		int removed = deque[front];
+		front++;
+		System.out.println("Deleted from front: " + removed);
+	}
+	
+	public void deletedFromRear() {
+		if(isEmpty()) {
+			System.out.println("Queue is already empty");
+			return;
+		}
+		int removed = deque[rear];
+		rear--;
+		System.out.println("Deleted from rear: " + removed);
+	}
+	
+	public void getFront() {
+		if(isEmpty()) {
+			System.out.println("Queue is already empty");
+			return;
+		}
+		System.out.println("Value at front: " + deque[front]);
+	}
+	
+	public void getRear() {
+		if(isEmpty()) {
+			System.out.println("Queue is already empty");
+			return;
+		}
+		System.out.println("Value at raer: " + deque[rear]);
+	}
+	
+	public void display() {
+		if(isEmpty()) {
+			System.out.println("Queue is already empty");
+			return;
+		}
+		
+		for(int i = front; i <= rear; i++) {
+			System.out.println(deque[i]);
+		}
+		System.out.println();
+	
+	}
+
+	public static void main(String[] args) {
+		SimpleDequeArray dq = new SimpleDequeArray(5);
+		
+		dq.insertAtRear(10);
+		dq.insertAtRear(20);
+		dq.insertAtRear(30);
+		
+		dq.insertAtFront(100);
+		
+		dq.display();
+		
+		dq.deletedFromRear();
+		dq.deletedFromFront();
+
+	}
+
+}
