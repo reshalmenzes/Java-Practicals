@@ -1,0 +1,23 @@
+package edu;
+
+import java.util.ArrayDeque;
+
+public class DequeExample {
+
+	public static void main(String[] args) {
+		ArrayDeque<Integer> dq = new ArrayDeque<Integer>();
+		
+		dq.addLast(20);
+		dq.addFirst(10);
+		dq.addLast(30);
+		
+		System.out.println("Deque contains: " + dq);
+		
+		System.out.println("Removed elements from the first: " + dq.removeFirst());
+		
+		System.out.println("Remoeved element from the last: " + dq.removeLast());
+		
+		System.out.println("Deque contains: " + dq);
+	}
+
+}
